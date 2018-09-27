@@ -1,0 +1,10 @@
+<div class="container mb-2 mt-2">
+  <div class="row header">
+    <div class="col-sm-12 text-center">
+      <h3>All Country of Region {{getReginName}}</h3> <a (click)="goBackToPreviousPage()" class="btn btn-warning">BACK</a> &nbsp; <a (click)="goToRegion()" class="btn btn-warning">Go TO Region</a>
+    </div>
+  </div>
+  <!--row-->
+</div>
+
+<app-share [allCountry]="allCountry" [countryCurrencyData]="countryCurrencyData" (notifyCurrency)="getCurrency($event)" [countryLangData]="countryLangData" (notifyLang)="getLang($event)"></app-share>

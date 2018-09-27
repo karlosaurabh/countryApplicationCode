@@ -1,0 +1,56 @@
+<div class="container" *ngIf="allCountry">
+  <div class="row">
+    <div class="col-sm-6 col-md-6 col-lg-4" *ngFor="let country of allCountry" style="margin-bottom:15px;">
+      <div class="card ">
+        <img class="card-img-top" src='{{country.flag}}' alt="" height="200" width="100%">
+        <div class="card-body text-center">
+
+
+
+          <div>
+            <h5 class="card-title text-success"><span class="sub_txt">Country Name:</span> {{country.name | uppercase}}</h5>
+          </div>
+          <hr>
+
+          <div>
+            <h6 class="card-title text-dark"><span class="sub_txt">Sub Region:</span> {{country.subregion | uppercase}}</h6>
+          </div>
+          <hr>
+
+          <!-- [routerLink]="['/countryDetail/currency',item.code]" -->
+          <div>
+            <h6><span class="sub_txt">Currency:</span><a class="anchorColor" *ngFor="let item of country.currencies; let last=last" (click)="getCurrency(item)">{{item.name}}<b>{{last?'
+                  ':','}}</b></a></h6>
+          </div>
+          <hr>
+
+          <div>
+            <h6><span class="sub_txt">Language:</span><a class="anchorColor" *ngFor="let item of country.languages; let last=last" (click)="getLang(item)">{{item.name}}<b>{{last?'
+                  ':','}}</b></a></h6>
+          </div>
+          <hr>
+
+
+          <div>
+            <h6><span class="sub_txt">Capital:</span> {{country.capital}}</h6>
+          </div>
+          <hr>
+          <div>
+            <h6><span class="sub_txt">Time:</span> {{country.timezones}}</h6>
+          </div>
+          <hr>
+          <div> <a [routerLink]="['/countryDetail',country.callingCodes[0]]" class="btn btn-success">Get More Details</a></div>
+
+
+
+
+          <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+
+        </div>
+        <!-- <div class="card-footer text-center">
+           
+        </div> -->
+      </div>
+    </div>
+  </div>
+</div>

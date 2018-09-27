@@ -1,0 +1,8 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import "~node_modules/ngx-toastr/toastr.css";
+
+.header{background: #007bff!important; color:white; padding: 3%; display: block; font-size:26px; }
+.header a{ color:white; text-decoration: none;}
+.card{transition: 0.5s;}
+.card:hover{transform: scale(1.05, 1.05); box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); transition: 0.5s;}
